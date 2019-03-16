@@ -3,10 +3,14 @@ def add_playlist(youtube, title, privacyStatus = 'private'):
   
   body = dict(snippet = dict(title = title, description = None), status = dict(privacyStatus = privacyStatus)) 
     
-  playlists_insert_response = youtube.playlists().insert(
+  try:
+	  playlists_insert_response = youtube.playlists().insert(
     part = 'snippet,status',
     body = body
   ).execute()
+  except:
+	  print('CreatePlaylist Error')
+	  return None
   
   print('New playlist Name: %s' % title)
   print('New playlist ID: %s' % playlists_insert_response['id'])
