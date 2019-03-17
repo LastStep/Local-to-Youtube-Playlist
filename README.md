@@ -20,7 +20,6 @@ Open a terminal window and pip install the following modules
 To-Do :
 
 - looping playlistIDs
-- refresh token
 
 
 
