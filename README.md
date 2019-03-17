@@ -16,9 +16,9 @@ https://developers.google.com/api-client-library/python/start/get_started
 
 **Step 2: Download modules**
 
-    Open a terminal window and pip install the following modules
+  Open a terminal window and pip install the following modules
 
-    **pip install mutagen**
+    pip install mutagen
 
 **Step 3: Store Credentials**
 
