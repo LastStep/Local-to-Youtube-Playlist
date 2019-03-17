@@ -18,8 +18,7 @@ def get_song_name(root, search):
 	except:
 		return search
 
-def run(youtube):
-	root_directory = r'D:\AAAAAAA Songs'
+def run(youtube, root_directory):
 	
 	files = {}
 	filters = ('.mp3', '.flac', '.m4a')
@@ -63,13 +62,15 @@ def search_list_by_keyword(youtube, **kwargs):
 	  ).execute()
   except:
 	  print('FindVideo Error')
-	  return 'Error'
+	  return youtube.search().list(
+	    **kwargs
+	  ).execute()
 
 def search_youtube(youtube, search):
   
   return search_list_by_keyword(youtube,
     part='snippet',
-    maxResults=5,
+    maxResults=1,
     q=search,
     type='Video')
   

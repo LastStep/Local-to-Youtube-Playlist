@@ -1,10 +1,12 @@
 import AddToPlaylist
-import SaveCredentials
 import FindVideo
+import BuildResource
 
-youtube = SaveCredentials.run()
+youtube = BuildResource.run()
 
-VideoID, VideoName = FindVideo.run(youtube)	
+root_directory = r'D:\AAAAAAA Songs\%%\Twenty One Pilots'
+
+VideoID, VideoName = FindVideo.run(youtube, root_directory)	
 
 PlaylistID = 'PL1r3AlG9BUdZRE0zSYGf2P4bld8LBllT-'
 
