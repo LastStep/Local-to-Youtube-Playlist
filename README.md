@@ -1,10 +1,10 @@
 # Local-to-Youtube-Playlist
 
-#What this does : 
+# What this does : 
  - Reads all the songs in the specified directory and searches by 'Artist Name + Song Name' on YouTube
  - Takes the first result and adds the video in the specified playlist
 
-#How to use :
+# How to use :
 
 **Step 1: Setup Google developer account**
 
@@ -26,66 +26,6 @@ Open a terminal window and pip install the following modules
 To-Do :
 
 - looping playlistIDs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
