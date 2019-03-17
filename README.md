@@ -25,7 +25,7 @@ https://developers.google.com/api-client-library/python/start/get_started
   -  Run the **StoreCredentials.py** file
   -  This will create a new **.json** file with all the Credential details
   -  Go to the **quickstart.py** file and copy paste the directory address in ***root_directory*** variable 
-  -  If you want to add to an already create playlist then copy paste the **PlayListID** in ***PlayListID*** variable
+  -  If you want to add to an already created playlist then copy paste the **PlayListID** in ***PlayListID*** variable
 
 **Note  :**
 
