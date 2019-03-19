@@ -2,7 +2,6 @@ import os
 import ytapi
 import mutagen
 
-
 def get_song_name(root, search):
 
   location = root + '\\' + search
@@ -17,6 +16,25 @@ def get_song_name(root, search):
       return song['©nam'][0] + ' ' + song['©ART'][0]
   except:
     return search
+
+def search_list_by_keyword(youtube, **kwargs):
+
+  kwargs = ytapi.remove_empty_kwargs(**kwargs)
+
+  try:
+    return youtube.search().list(**kwargs).execute()
+  except Exception as e:
+    print('\nFindVideo Error')
+    print(e)
+    return 'Error'
+
+def search_youtube(youtube, search):
+
+  return search_list_by_keyword(youtube,
+                                part='snippet',
+                                maxResults=5,
+                                q=search,
+                                type='Video')
 
 def run(youtube, root_directory):
 
@@ -40,7 +58,8 @@ def run(youtube, root_directory):
 
       search_results = search_youtube(youtube, search)
 
-      if search_results == 'Error': return VideoID, VideoName
+      if search_results == 'Error':
+        return VideoID, VideoName
 
       VideoId = search_results['items'][0]['id']['videoId']
       VideoID.append(VideoId)
@@ -51,22 +70,4 @@ def run(youtube, root_directory):
 
   return VideoID, VideoName
 
-
-def search_list_by_keyword(youtube, **kwargs):
-
-  kwargs = ytapi.remove_empty_kwargs(**kwargs)
-
-  try:
-    return youtube.search().list(**kwargs).execute()
-  except:
-    print('FindVideo Error')
-    return youtube.search().list(**kwargs).execute()
-
-def search_youtube(youtube, search):
-
-  return search_list_by_keyword(youtube,
-                                part='snippet',
-                                maxResults=1,
-                                q=search,
-                                type='Video')
 

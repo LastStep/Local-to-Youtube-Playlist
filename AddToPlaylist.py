@@ -1,15 +1,16 @@
 import ytapi
-
+import sys
 def playlist_items_insert(youtube, VideoName, properties, **kwargs):
 
   resource = ytapi.build_resource(properties)
 
   kwargs = ytapi.remove_empty_kwargs(**kwargs)
 
-  try: youtube.playlistItems().insert(body=resource).execute()
-  except:
+  try: youtube.playlistItems().insert(body=resource, **kwargs).execute()
+  except Exception as e:
     print('AddToPlaylist Error')
-    youtube.playlistItems().insert(body=resource).execute()
+    print(e)
+    sys.exit()
 
   print('Done : ', VideoName)
 
