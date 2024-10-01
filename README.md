@@ -38,5 +38,3 @@ https://developers.google.com/api-client-library/python/start/get_started
 - looping playlistIDs
 
 
-
-p.s: fuck google api
